@@ -13,6 +13,7 @@
 
 @property (copy, nonatomic) NSString *userId;
 @property (copy, nonatomic) NSString *email;
+@property (copy, nonatomic) NSString *password;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *lastname;
 

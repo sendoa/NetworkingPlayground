@@ -59,6 +59,7 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
                     // Initialize user model
                     NSError *userModelError;
                     SPOUser *user = [MTLJSONAdapter modelOfClass:[SPOUser class] fromJSONDictionary:responseBody[@"user_data"] error:&userModelError];
+                    user.password = password;
                     if (!userModelError) {
                         completionBlock(user, nil);
                     } else {

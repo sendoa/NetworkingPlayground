@@ -14,10 +14,14 @@
 
 @implementation SPOUser
 
+#pragma mark - Mantle related methods
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"userId"      : @"id"
              };
 }
+
+#pragma mark - Other methods
+
 
 @end

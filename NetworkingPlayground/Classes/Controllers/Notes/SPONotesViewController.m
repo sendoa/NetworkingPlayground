@@ -32,6 +32,7 @@
 #pragma mark - Helpers
 - (void)checkUserCredentials
 {
+    [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
     // Get credentials from keychain
     NSString *userEmail = [[FXKeychain defaultKeychain] objectForKey:SPOActiveUserKeychainEmailKey];
     NSString *userPassword = [[FXKeychain defaultKeychain] objectForKey:SPOActiveUserKeychainPasswordKey];

@@ -25,6 +25,7 @@
 		C7754A6E180091E80079ACBD /* SPOUserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C7754A6D180091E80079ACBD /* SPOUserStore.m */; };
 		C7CD7F0418014EAF005D3A96 /* SPOActiveUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0318014EAF005D3A96 /* SPOActiveUser.m */; };
 		C7CD7F0718015441005D3A96 /* SPONotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0618015441005D3A96 /* SPONotesViewController.m */; };
+		C7CD7F0C180159FC005D3A96 /* SPOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		C7CD7F0318014EAF005D3A96 /* SPOActiveUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOActiveUser.m; sourceTree = "<group>"; };
 		C7CD7F0518015441005D3A96 /* SPONotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPONotesViewController.h; path = Notes/SPONotesViewController.h; sourceTree = "<group>"; };
 		C7CD7F0618015441005D3A96 /* SPONotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPONotesViewController.m; path = Notes/SPONotesViewController.m; sourceTree = "<group>"; };
+		C7CD7F0A180159FC005D3A96 /* SPOLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOLoginViewController.h; sourceTree = "<group>"; };
+		C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOLoginViewController.m; sourceTree = "<group>"; };
 		CAC6453858AC4847894EFBE7 /* libPods-NetworkingPlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkingPlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,6 +189,7 @@
 		C7754A5C18008F450079ACBD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C7CD7F09180159EC005D3A96 /* Login */,
 				C7CD7F0818015446005D3A96 /* Notes */,
 			);
 			path = Controllers;
@@ -259,6 +263,15 @@
 				C7CD7F0618015441005D3A96 /* SPONotesViewController.m */,
 			);
 			name = Notes;
+			sourceTree = "<group>";
+		};
+		C7CD7F09180159EC005D3A96 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C7CD7F0A180159FC005D3A96 /* SPOLoginViewController.h */,
+				C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +412,7 @@
 				C7CD7F0718015441005D3A96 /* SPONotesViewController.m in Sources */,
 				C7754A6518008F8F0079ACBD /* SPOAppDelegate.m in Sources */,
 				C7754A6E180091E80079ACBD /* SPOUserStore.m in Sources */,
+				C7CD7F0C180159FC005D3A96 /* SPOLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

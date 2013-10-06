@@ -21,7 +21,4 @@
              };
 }
 
-#pragma mark - Other methods
-
-
 @end

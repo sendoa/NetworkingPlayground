@@ -11,12 +11,16 @@
 #import "SPOUserStore.h"
 #import "SPOActiveUser.h"
 #import "SPOUser.h"
+#import "SPONotesStore.h"
+#import "SPONote.h"
 #import "SPOLoginViewController.h"
 #import "SPORegistrationViewController.h"
 
 @interface SPONotesViewController ()
 
+@property (copy, nonatomic) NSArray *notes;
 @property (strong, nonatomic) SPOUserStore *userStore;
+@property (strong, nonatomic) SPONotesStore *notesStore;
 
 @end
 
@@ -41,6 +45,7 @@
                                                object:nil];
     
     self.userStore = [[SPOUserStore alloc] init];
+    self.notesStore = [[SPONotesStore alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -53,6 +58,20 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - UITableViewDelegate & UITableViewDatasource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.notes count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    cell.textLabel.text = [NSString stringWithFormat:@"Row %d", indexPath.row];
+    
+    return cell;
 }
 
 #pragma mark - Notification observers
@@ -81,6 +100,7 @@
                 if ([[SPOActiveUser sharedInstance] isUserLoggedIn]) {
                     // Load user's notes
                     NSLog(@"Load notes for user %@", [SPOActiveUser sharedInstance].user.userId);
+                    [self fetchNotes];
                 } else {
                     // Show login screen
                     [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
@@ -90,6 +110,18 @@
             }
         }];
     }
+}
+
+- (void)fetchNotes
+{
+    [self.notesStore fetchNotesForUser:[SPOActiveUser sharedInstance].user onCompletion:^(NSArray *notes, NSError *error) {
+        if (!error) {
+            self.notes = notes;
+            [self.tableView reloadData];
+        } else {
+            NSAssert(NO, @"Error while fetching notes %@", error);
+        }
+    }];
 }
 
 @end

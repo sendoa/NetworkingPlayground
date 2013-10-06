@@ -15,6 +15,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self setupStandardUserDefaults];
+    [self setupMemberLoginStatus];
+    
     return YES;
 }
 

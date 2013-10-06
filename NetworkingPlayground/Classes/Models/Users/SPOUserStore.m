@@ -44,6 +44,8 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
     NSParameterAssert(email);
     NSParameterAssert(password);
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     // Prepare POST data
     NSString *POSTDataString = [NSString stringWithFormat:@"email=%@&password=%@", email, password];
     
@@ -70,26 +72,31 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
                     if (!userModelError) {
                         [[NSNotificationCenter defaultCenter] postNotificationName:SPOUserStoreLoginSucceedNotiticationKey object:self];
                         dispatch_async(dispatch_get_main_queue(), ^{
+                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                             completionBlock(user, nil);
                         });
                     } else {
                         dispatch_async(dispatch_get_main_queue(), ^{
+                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                             completionBlock(nil, userModelError);
                         });
                     }
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                         completionBlock(nil, nil);
                     });
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     completionBlock(nil, JSONError);
                 });
             }
         } else {
             NSError *error = [NSError errorWithDomain:@"SPOUserStoreNetworkingError" code:HTTPResponse.statusCode userInfo:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 completionBlock(nil, error);
             });
         }
@@ -101,6 +108,8 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
 - (void)newUserWithParameters:(NSDictionary *)params onCompletion:(NewUserCompletionBlock)completionBlock
 {
     NSParameterAssert(params);
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     // Prepare POST data
     NSMutableString *POSTDataString = [@"" mutableCopy];
@@ -131,26 +140,31 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
                     if (!userModelError) {
                         [[NSNotificationCenter defaultCenter] postNotificationName:SPOUserStoreLoginSucceedNotiticationKey object:self];
                         dispatch_async(dispatch_get_main_queue(), ^{
+                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                             completionBlock(user, nil);
                         });
                     } else {
                         dispatch_async(dispatch_get_main_queue(), ^{
+                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                             completionBlock(nil, userModelError);
                         });
                     }
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                         completionBlock(nil, nil);
                     });
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     completionBlock(nil, JSONError);
                 });
             }
         } else {
             NSError *error = [NSError errorWithDomain:@"SPOUserStoreNetworkingError" code:HTTPResponse.statusCode userInfo:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 completionBlock(nil, error);
             });
         }

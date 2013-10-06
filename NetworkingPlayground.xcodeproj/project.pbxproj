@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36D0BABEEAB1401BB24A6517 /* libPods-NetworkingPlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC6453858AC4847894EFBE7 /* libPods-NetworkingPlayground.a */; };
+		C73FF7E61801C3FF0081804D /* SPONewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73FF7E51801C3FF0081804D /* SPONewNoteViewController.m */; };
 		C76B937418019F5000E043E7 /* SPORegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937318019F5000E043E7 /* SPORegistrationViewController.m */; };
 		C76B937B1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937A1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m */; };
 		C76B937F1801AE3600E043E7 /* SPONote.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937E1801AE3600E043E7 /* SPONote.m */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		1292EEED33264B59A6922DD4 /* Pods-NetworkingPlayground.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingPlayground.xcconfig"; path = "Pods/Pods-NetworkingPlayground.xcconfig"; sourceTree = "<group>"; };
+		C73FF7E41801C3FF0081804D /* SPONewNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPONewNoteViewController.h; path = Notes/SPONewNoteViewController.h; sourceTree = "<group>"; };
+		C73FF7E51801C3FF0081804D /* SPONewNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPONewNoteViewController.m; path = Notes/SPONewNoteViewController.m; sourceTree = "<group>"; };
 		C76B937218019F5000E043E7 /* SPORegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPORegistrationViewController.h; sourceTree = "<group>"; };
 		C76B937318019F5000E043E7 /* SPORegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPORegistrationViewController.m; sourceTree = "<group>"; };
 		C76B93791801A13100E043E7 /* SPONetworkingPlaygroundConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPONetworkingPlaygroundConstants.h; sourceTree = "<group>"; };
@@ -300,6 +303,8 @@
 			children = (
 				C7CD7F0518015441005D3A96 /* SPONotesViewController.h */,
 				C7CD7F0618015441005D3A96 /* SPONotesViewController.m */,
+				C73FF7E41801C3FF0081804D /* SPONewNoteViewController.h */,
+				C73FF7E51801C3FF0081804D /* SPONewNoteViewController.m */,
 			);
 			name = Notes;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 			files = (
 				C7754A6B180091DB0079ACBD /* SPOUser.m in Sources */,
 				C76B937B1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m in Sources */,
+				C73FF7E61801C3FF0081804D /* SPONewNoteViewController.m in Sources */,
 				C76B937F1801AE3600E043E7 /* SPONote.m in Sources */,
 				C7754A3818008D990079ACBD /* main.m in Sources */,
 				C76B93821801B19100E043E7 /* SPONotesStore.m in Sources */,

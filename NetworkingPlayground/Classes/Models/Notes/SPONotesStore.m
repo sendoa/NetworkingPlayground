@@ -40,6 +40,8 @@ static NSString * const SPONotesStoreAPIKey = @"55e76dc4bbae25b066cb";
 {
     NSParameterAssert(user);
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     // FETCH data
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/%@/notes", SPONotesStoreBaseURL, user.userId]];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:self.baseConfiguration];
@@ -61,22 +63,26 @@ static NSString * const SPONotesStoreAPIKey = @"55e76dc4bbae25b066cb";
                         [notes addObject:note];
                     } else {
                         dispatch_async(dispatch_get_main_queue(), ^{
+                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                             completionBlock(nil, noteModelError);
                         });
                     }
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     completionBlock(notes, nil);
                 });
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     completionBlock(nil, JSONError);
                 });
             }
         } else {
             NSError *error = [NSError errorWithDomain:@"SPOUserStoreNetworkingError" code:HTTPResponse.statusCode userInfo:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 completionBlock(nil, error);
             });
         }

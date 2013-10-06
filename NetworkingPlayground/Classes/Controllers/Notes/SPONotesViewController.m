@@ -47,6 +47,8 @@
     
     self.userStore = [[SPOUserStore alloc] init];
     self.notesStore = [[SPONotesStore alloc] init];
+    
+    [self initialUISetup];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -82,7 +84,20 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - Action methods
+- (void)addNewNoteButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"NewNoteSegue" sender:sender];
+}
+
 #pragma mark - Helpers
+- (void)initialUISetup
+{
+    // rightBarButtonItem
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Nueva" style:UIBarButtonItemStylePlain target:self action:@selector(addNewNoteButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+}
+
 - (void)checkUserCredentials
 {
     // Get credentials from keychain

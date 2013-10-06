@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSString * SPOLoginViewControllerLoginSucceedNotificationKey;
+
 @interface SPOLoginViewController : UITableViewController
 
 @end

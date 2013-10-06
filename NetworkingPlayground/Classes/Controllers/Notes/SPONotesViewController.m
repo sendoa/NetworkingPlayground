@@ -11,6 +11,7 @@
 #import "SPOUserStore.h"
 #import "SPOActiveUser.h"
 #import "SPOUser.h"
+#import "SPOLoginViewController.h"
 
 @interface SPONotesViewController ()
 
@@ -24,15 +25,32 @@
 {
     [super viewDidLoad];
     
+    // Subscribe to successful login notifications from login controller
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userLoginSucceedNotiticationObserver:)
+                                                 name:SPOLoginViewControllerLoginSucceedNotificationKey
+                                               object:nil];
+    
     self.userStore = [[SPOUserStore alloc] init];
     
     [self checkUserCredentials];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Notification observers
+- (void)userLoginSucceedNotiticationObserver:(NSNotification *)notification
+{
+    NSLog(@"Login success notification from login controller received");
+    [self.tableView reloadData];
+}
+
 #pragma mark - Helpers
 - (void)checkUserCredentials
 {
-    [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
     // Get credentials from keychain
     NSString *userEmail = [[FXKeychain defaultKeychain] objectForKey:SPOActiveUserKeychainEmailKey];
     NSString *userPassword = [[FXKeychain defaultKeychain] objectForKey:SPOActiveUserKeychainPasswordKey];
@@ -53,7 +71,7 @@
                 NSLog(@"Load notes for user %@", [SPOActiveUser sharedInstance].user.userId);
             } else {
                 // Show login screen
-                NSLog(@"Incorrect login");
+                [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
             }
         } else {
             NSAssert(NO, @"Error while login user %@", error);

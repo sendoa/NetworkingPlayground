@@ -11,6 +11,8 @@
 #import "SPOActiveUser.h"
 #import "SPOUser.h"
 
+NSString * SPOLoginViewControllerLoginSucceedNotificationKey = @"SPOLoginViewControllerLoginSucceedNotification";
+
 @interface SPOLoginViewController () <UITextFieldDelegate>
 
 #pragma mark - Properties
@@ -72,6 +74,7 @@
         if (!error) {
             if (user) {
                 [[SPOActiveUser sharedInstance] setUser:user];
+                [[NSNotificationCenter defaultCenter] postNotificationName:SPOLoginViewControllerLoginSucceedNotificationKey object:self];
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"¡Ups!"

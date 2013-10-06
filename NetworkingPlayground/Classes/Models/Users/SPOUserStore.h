@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @class SPOUser;
+
+UIKIT_EXTERN NSString * const SPOUserStoreLoginSucceedNotiticationKey;
 
 typedef void (^LoginCompletionBlock)(SPOUser *user, NSError *error);
 

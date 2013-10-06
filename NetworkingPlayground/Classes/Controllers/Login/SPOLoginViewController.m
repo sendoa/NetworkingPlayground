@@ -72,18 +72,14 @@
         if (!error) {
             if (user) {
                 [[SPOActiveUser sharedInstance] setUser:user];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                });
+                [self dismissViewControllerAnimated:YES completion:nil];
             } else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"¡Ups!"
-                                                                    message:@"Usuario o contraseña incorrectos"
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
-                    [alert show];
-                });
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"¡Ups!"
+                                                                message:@"Usuario o contraseña incorrectos"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
             }
         } else {
             NSAssert(NO, @"Error while login user %@", error);

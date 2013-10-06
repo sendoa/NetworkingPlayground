@@ -61,19 +61,29 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
                     SPOUser *user = [MTLJSONAdapter modelOfClass:[SPOUser class] fromJSONDictionary:responseBody[@"user_data"] error:&userModelError];
                     user.password = password;
                     if (!userModelError) {
-                        completionBlock(user, nil);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completionBlock(user, nil);
+                        });
                     } else {
-                        completionBlock(nil, userModelError);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completionBlock(nil, userModelError);
+                        });
                     }
                 } else {
-                    completionBlock(nil, nil);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completionBlock(nil, nil);
+                    });
                 }
             } else {
-                completionBlock(nil, JSONError);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completionBlock(nil, JSONError);
+                });
             }
         } else {
             NSError *error = [NSError errorWithDomain:@"SPOUserStoreNetworkingError" code:HTTPResponse.statusCode userInfo:nil];
-            completionBlock(nil, error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionBlock(nil, error);
+            });
         }
     }];
     [dataTask resume];

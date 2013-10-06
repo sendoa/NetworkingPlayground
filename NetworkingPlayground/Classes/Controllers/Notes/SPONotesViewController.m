@@ -15,6 +15,7 @@
 #import "SPONote.h"
 #import "SPOLoginViewController.h"
 #import "SPORegistrationViewController.h"
+#import "SPONoteCell.h"
 
 @interface SPONotesViewController ()
 
@@ -68,8 +69,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %d", indexPath.row];
+    SPONoteCell *cell = [tableView dequeueReusableCellWithIdentifier:SPONoteCellIdentifier];
+    [cell bindWithNote:self.notes[indexPath.row]];
     
     return cell;
 }

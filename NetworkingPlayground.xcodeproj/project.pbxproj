@@ -12,6 +12,7 @@
 		C76B937B1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937A1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m */; };
 		C76B937F1801AE3600E043E7 /* SPONote.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937E1801AE3600E043E7 /* SPONote.m */; };
 		C76B93821801B19100E043E7 /* SPONotesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B93811801B19100E043E7 /* SPONotesStore.m */; };
+		C76B93851801BD3400E043E7 /* SPONoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B93841801BD3400E043E7 /* SPONoteCell.m */; };
 		C7754A2C18008D990079ACBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2B18008D990079ACBD /* Foundation.framework */; };
 		C7754A2E18008D990079ACBD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2D18008D990079ACBD /* CoreGraphics.framework */; };
 		C7754A3018008D990079ACBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2F18008D990079ACBD /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 		C76B937E1801AE3600E043E7 /* SPONote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPONote.m; sourceTree = "<group>"; };
 		C76B93801801B19100E043E7 /* SPONotesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPONotesStore.h; sourceTree = "<group>"; };
 		C76B93811801B19100E043E7 /* SPONotesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPONotesStore.m; sourceTree = "<group>"; };
+		C76B93831801BD3400E043E7 /* SPONoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPONoteCell.h; sourceTree = "<group>"; };
+		C76B93841801BD3400E043E7 /* SPONoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPONoteCell.m; sourceTree = "<group>"; };
 		C7754A2818008D990079ACBD /* NetworkingPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7754A2B18008D990079ACBD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C7754A2D18008D990079ACBD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -240,6 +243,8 @@
 		C7754A5E18008F450079ACBD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C76B93831801BD3400E043E7 /* SPONoteCell.h */,
+				C76B93841801BD3400E043E7 /* SPONoteCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 				C7CD7F0418014EAF005D3A96 /* SPOActiveUser.m in Sources */,
 				C7CD7F0718015441005D3A96 /* SPONotesViewController.m in Sources */,
 				C7754A6518008F8F0079ACBD /* SPOAppDelegate.m in Sources */,
+				C76B93851801BD3400E043E7 /* SPONoteCell.m in Sources */,
 				C7754A6E180091E80079ACBD /* SPOUserStore.m in Sources */,
 				C76B937418019F5000E043E7 /* SPORegistrationViewController.m in Sources */,
 				C7CD7F0C180159FC005D3A96 /* SPOLoginViewController.m in Sources */,

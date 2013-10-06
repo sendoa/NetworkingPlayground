@@ -12,6 +12,7 @@
 #import "SPOActiveUser.h"
 #import "SPOUser.h"
 #import "SPOLoginViewController.h"
+#import "SPORegistrationViewController.h"
 
 @interface SPONotesViewController ()
 
@@ -25,13 +26,26 @@
 {
     [super viewDidLoad];
     
-    // Subscribe to successful login notifications from login controller
+    // This is not the first run anymore
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:SPONetworkingPlaygroundConstantsFirstRunKey];
+    
+    // Subscribe to successful login notifications from login controller and registration controller
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userLoginSucceedNotiticationObserver:)
                                                  name:SPOLoginViewControllerLoginSucceedNotificationKey
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userLoginSucceedNotiticationObserver:)
+                                                 name:SPORegistrationViewControllerRegistrationSucceedNotificationKey
+                                               object:nil];
+    
     self.userStore = [[SPOUserStore alloc] init];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     [self checkUserCredentials];
 }
@@ -58,25 +72,24 @@
     if (!userEmail) {
         // Show login screen
         NSLog(@"No user credentials found on keychain");
-        
-        return;
-    }
-    
-    // Try to login
-    [self.userStore loginWithEmail:userEmail password:userPassword onCompletion:^(SPOUser *user, NSError *error) {
-        if (!error) {
-            [[SPOActiveUser sharedInstance] setUser:user];
-            if ([[SPOActiveUser sharedInstance] isUserLoggedIn]) {
-                // Load notes from user
-                NSLog(@"Load notes for user %@", [SPOActiveUser sharedInstance].user.userId);
+        [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
+    } else {
+        // Try to login
+        [self.userStore loginWithEmail:userEmail password:userPassword onCompletion:^(SPOUser *user, NSError *error) {
+            if (!error) {
+                [[SPOActiveUser sharedInstance] setUser:user];
+                if ([[SPOActiveUser sharedInstance] isUserLoggedIn]) {
+                    // Load user's notes
+                    NSLog(@"Load notes for user %@", [SPOActiveUser sharedInstance].user.userId);
+                } else {
+                    // Show login screen
+                    [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
+                }
             } else {
-                // Show login screen
-                [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
+                NSAssert(NO, @"Error while login user %@", error);
             }
-        } else {
-            NSAssert(NO, @"Error while login user %@", error);
-        }
-    }];
+        }];
+    }
 }
 
 @end

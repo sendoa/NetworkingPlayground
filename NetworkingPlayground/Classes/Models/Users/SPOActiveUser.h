@@ -19,5 +19,6 @@ UIKIT_EXTERN NSString * const SPOActiveUserKeychainPasswordKey;
 @property (assign, nonatomic, readonly, getter = isUserLoggedIn) BOOL userLoggedIn;
 
 + (instancetype)sharedInstance;
+- (void)removeUserCredentialsEntriesFromKeychain;
 
 @end

@@ -15,15 +15,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    SPOUserStore *store = [[SPOUserStore alloc] init];
-//    [store loginWithEmail:@"sendoa@gmail.com" password:@"qwertyuiop" onCompletion:^(SPOUser *user, NSError *error) {
-//        if (!error) {
-//            NSLog(@"Respuesta: %@", user);
-//            [[SPOActiveUser sharedInstance] setUser:user];
-//        }
-//    }];
-    
     return YES;
+}
+
+#pragma mark - Helpers
+- (void)setupStandardUserDefaults
+{
+    NSDictionary *defaults = @{
+                               SPONetworkingPlaygroundConstantsFirstRunKey  : @YES
+                               };
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults registerDefaults:defaults];
+}
+
+- (void)setupMemberLoginStatus
+{
+    // Remove keychain entries on first run
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:SPONetworkingPlaygroundConstantsFirstRunKey]) {
+        [[SPOActiveUser sharedInstance] removeUserCredentialsEntriesFromKeychain];
+    }
 }
 
 @end

@@ -11,7 +11,7 @@
 #import "SPONote.h"
 
 #pragma mark - Internal use constants
-static NSString * const SPONotesStoreBaseURL = @"http://simplenotes.sendoadev.com/api/v1";
+static NSString * const SPONotesStoreBaseURL = @"http://simplenotes.sportuondo.dev/api/v1";
 static NSString * const SPONotesStoreAPIKey = @"55e76dc4bbae25b066cb";
 
 @interface SPONotesStore ()
@@ -84,6 +84,62 @@ static NSString * const SPONotesStoreAPIKey = @"55e76dc4bbae25b066cb";
             dispatch_async(dispatch_get_main_queue(), ^{
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 completionBlock(nil, error);
+            });
+        }
+    }];
+    [dataTask resume];
+}
+
+- (void)newNoteWithParameters:(NSDictionary *)params onCompletion:(NewNoteCompletionBlock)completionBlock
+{
+    NSParameterAssert(params);
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    // Prepare POST data
+    NSMutableString *POSTDataString = [@"" mutableCopy];
+    [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [POSTDataString appendFormat:@"%@=%@&", key, obj];
+    }];
+    
+    // POST data
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", SPONotesStoreBaseURL, @"notes"]];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:self.baseConfiguration];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPBody = [POSTDataString dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"POST";
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        // Check HTTP status code
+        NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+        if (HTTPResponse.statusCode == 200) {
+            // Convert from JSON to NSDictionary
+            NSError *JSONError;
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&JSONError];
+            if (!JSONError) {
+                // Is the request correct?
+                if ([responseBody[@"code"] isEqualToString:@"200"]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                        completionBlock(nil);
+                    });
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                        NSError *error = [NSError errorWithDomain:@"SPONotesStoreNewNoteCreationError" code:HTTPResponse.statusCode userInfo:nil];
+                        completionBlock(error);
+                    });
+                }
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                    completionBlock(JSONError);
+                });
+            }
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                NSError *error = [NSError errorWithDomain:@"SPONotesStoreNetworkingError" code:HTTPResponse.statusCode userInfo:nil];
+                completionBlock(error);
             });
         }
     }];

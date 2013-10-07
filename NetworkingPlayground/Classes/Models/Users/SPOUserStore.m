@@ -13,7 +13,7 @@
 NSString * const SPOUserStoreLoginSucceedNotiticationKey = @"SPOUserStoreLoginSucceedNotitication";
 
 #pragma mark - Internal use constants
-static NSString * const SPOUserStoreBaseURL = @"http://simplenotes.sendoadev.com/api/v1";
+static NSString * const SPOUserStoreBaseURL = @"http://simplenotes.sportuondo.dev/api/v1";
 static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
 
 @interface SPOUserStore ()
@@ -131,7 +131,7 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
             NSError *JSONError;
             NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&JSONError];
             if (!JSONError) {
-                // Is login correct?
+                // Is the request correct?
                 if ([responseBody[@"code"] isEqualToString:@"200"]) {
                     // Initialize user model
                     NSError *userModelError;
@@ -162,9 +162,9 @@ static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
                 });
             }
         } else {
-            NSError *error = [NSError errorWithDomain:@"SPOUserStoreNetworkingError" code:HTTPResponse.statusCode userInfo:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                NSError *error = [NSError errorWithDomain:@"SPOUserStoreNetworkingError" code:HTTPResponse.statusCode userInfo:nil];
                 completionBlock(nil, error);
             });
         }

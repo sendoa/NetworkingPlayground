@@ -87,6 +87,7 @@
 #pragma mark - Action methods
 - (void)addNewNoteButtonTapped:(id)sender
 {
+    NSLog(@"Segue");
     [self performSegueWithIdentifier:@"NewNoteSegue" sender:sender];
 }
 
@@ -133,6 +134,8 @@
     [self.notesStore fetchNotesForUser:[SPOActiveUser sharedInstance].user onCompletion:^(NSArray *notes, NSError *error) {
         if (!error) {
             self.notes = notes;
+            NSLog(@"Notas recibidas %@", notes);
+            
             [self.tableView reloadData];
         } else {
             NSAssert(NO, @"Error while fetching notes %@", error);

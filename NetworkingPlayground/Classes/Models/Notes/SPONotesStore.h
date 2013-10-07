@@ -10,11 +10,13 @@
 @class SPOUser;
 
 typedef void (^FetchNotesCompletionBlock)(NSArray *notes, NSError *error);
+typedef void (^NewNoteCompletionBlock)(NSError *error);
 
 @interface SPONotesStore : NSObject
 
 @property (strong, nonatomic) NSURL *baseURL;
 
 - (void)fetchNotesForUser:(SPOUser *)user onCompletion:(FetchNotesCompletionBlock)completionBlock;
+- (void)newNoteWithParameters:(NSDictionary *)params onCompletion:(NewNoteCompletionBlock)completionBlock;
 
 @end

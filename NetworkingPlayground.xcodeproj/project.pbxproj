@@ -370,6 +370,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sendoa Portuondo";
 				TargetAttributes = {
+					C7754A2718008D980079ACBD = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					C7754A4218008D990079ACBD = {
 						TestTargetID = C7754A2718008D980079ACBD;
 					};

@@ -7,9 +7,10 @@
 //
 
 #import "SPOAppDelegate.h"
+#import <FXKeychain.h>
 #import "SPOUserStore.h"
 #import "SPOActiveUser.h"
-#import <FXKeychain.h>
+#import "SPONotesViewController.h"
 
 @implementation SPOAppDelegate
 
@@ -19,6 +20,22 @@
     [self setupMemberLoginStatus];
     
     return YES;
+}
+
+#pragma mark - Background fething
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    UIViewController *rootVC = self.window.rootViewController;
+    UITabBarController *tabBarController = (UITabBarController *)rootVC;
+    
+    // We only have interest in updating data if the selected tab is the notes one
+    id selectedVC = tabBarController.selectedViewController;
+    if ([selectedVC isMemberOfClass:UINavigationController.class]) {
+        id topVC = [(UINavigationController *)selectedVC topViewController];
+        if ([topVC isMemberOfClass:[SPONotesViewController class]]) {
+            [(SPONotesViewController *)topVC performBackgroundNotesFetchingWithCompletionHandler:completionHandler];
+        }
+    }
 }
 
 #pragma mark - Helpers

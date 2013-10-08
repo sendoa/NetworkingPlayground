@@ -117,7 +117,7 @@
                 if ([[SPOActiveUser sharedInstance] isUserLoggedIn]) {
                     // Load user's notes
                     NSLog(@"Load notes for user %@", [SPOActiveUser sharedInstance].user.userId);
-                    [self fetchNotes];
+                    [self fetchNotesWithCompletionHandler:nil];
                 } else {
                     // Show login screen
                     [self performSegueWithIdentifier:@"LoginScreenSegue" sender:self];
@@ -129,16 +129,52 @@
     }
 }
 
-- (void)fetchNotes
+- (void)performBackgroundNotesFetchingWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    // Get credentials from keychain
+    NSString *userEmail = [[FXKeychain defaultKeychain] objectForKey:SPOActiveUserKeychainEmailKey];
+    NSString *userPassword = [[FXKeychain defaultKeychain] objectForKey:SPOActiveUserKeychainPasswordKey];
+    
+    if (!userEmail) {
+        // Show login screen
+        NSLog(@"No user credentials found on keychain");
+        completionHandler(UIBackgroundFetchResultFailed);
+    } else {
+        // Try to login
+        [self.userStore loginWithEmail:userEmail password:userPassword onCompletion:^(SPOUser *user, NSError *error) {
+            if (!error) {
+                [[SPOActiveUser sharedInstance] setUser:user];
+                if ([[SPOActiveUser sharedInstance] isUserLoggedIn]) {
+                    // Load user's notes
+                    [self fetchNotesWithCompletionHandler:completionHandler];
+                } else {
+                    // Incorrect login
+                    completionHandler(UIBackgroundFetchResultFailed);
+                }
+            } else {
+                NSLog(@"Error while login user %@", error);
+                completionHandler(UIBackgroundFetchResultFailed);
+            }
+        }];
+    }
+}
+
+- (void)fetchNotesWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     [self.notesStore fetchNotesForUser:[SPOActiveUser sharedInstance].user onCompletion:^(NSArray *notes, NSError *error) {
         if (!error) {
-            self.notes = notes;
-            NSLog(@"Notas recibidas %@", notes);
-            
-            [self.tableView reloadData];
+            if ([self.notes isEqualToArray:notes]) {
+                NSLog(@"NO Se han recibido nuevas notas");
+                if (completionHandler) completionHandler(UIBackgroundFetchResultNoData);
+            } else {
+                NSLog(@"Se han recibido nuevas notas");
+                self.notes = notes;
+                [self.tableView reloadData];
+                 if (completionHandler) completionHandler(UIBackgroundFetchResultNoData);
+            }
         } else {
-            NSAssert(NO, @"Error while fetching notes %@", error);
+            NSLog(@"Error while fetching notes %@", error);
+            if (completionHandler) completionHandler(UIBackgroundFetchResultFailed);
         }
     }];
 }

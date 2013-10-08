@@ -10,4 +10,6 @@
 
 @interface SPONotesViewController : UITableViewController
 
+- (void)performBackgroundNotesFetchingWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+
 @end

@@ -32,6 +32,8 @@
 		C7CD7F0418014EAF005D3A96 /* SPOActiveUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0318014EAF005D3A96 /* SPOActiveUser.m */; };
 		C7CD7F0718015441005D3A96 /* SPONotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0618015441005D3A96 /* SPONotesViewController.m */; };
 		C7CD7F0C180159FC005D3A96 /* SPOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */; };
+		C7F050DB1806C00500264321 /* SPOBGDownloadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F050DA1806C00500264321 /* SPOBGDownloadsViewController.m */; };
+		C7F050DE1806E5F800264321 /* SPOResumableDownloadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F050DD1806E5F800264321 /* SPOResumableDownloadsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,10 @@
 		C7CD7F0618015441005D3A96 /* SPONotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPONotesViewController.m; path = Notes/SPONotesViewController.m; sourceTree = "<group>"; };
 		C7CD7F0A180159FC005D3A96 /* SPOLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOLoginViewController.h; sourceTree = "<group>"; };
 		C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOLoginViewController.m; sourceTree = "<group>"; };
+		C7F050D91806C00500264321 /* SPOBGDownloadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOBGDownloadsViewController.h; sourceTree = "<group>"; };
+		C7F050DA1806C00500264321 /* SPOBGDownloadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOBGDownloadsViewController.m; sourceTree = "<group>"; };
+		C7F050DC1806E5F800264321 /* SPOResumableDownloadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOResumableDownloadsViewController.h; sourceTree = "<group>"; };
+		C7F050DD1806E5F800264321 /* SPOResumableDownloadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOResumableDownloadsViewController.m; sourceTree = "<group>"; };
 		CAC6453858AC4847894EFBE7 /* libPods-NetworkingPlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkingPlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -230,6 +236,7 @@
 			children = (
 				C7CD7F09180159EC005D3A96 /* Login */,
 				C7CD7F0818015446005D3A96 /* Notes */,
+				C7F050D81806BFEF00264321 /* Downloads */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -318,6 +325,17 @@
 				C76B937318019F5000E043E7 /* SPORegistrationViewController.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C7F050D81806BFEF00264321 /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				C7F050D91806C00500264321 /* SPOBGDownloadsViewController.h */,
+				C7F050DA1806C00500264321 /* SPOBGDownloadsViewController.m */,
+				C7F050DC1806E5F800264321 /* SPOResumableDownloadsViewController.h */,
+				C7F050DD1806E5F800264321 /* SPOResumableDownloadsViewController.m */,
+			);
+			path = Downloads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +481,7 @@
 				C76B937B1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m in Sources */,
 				C73FF7E61801C3FF0081804D /* SPONewNoteViewController.m in Sources */,
 				C76B937F1801AE3600E043E7 /* SPONote.m in Sources */,
+				C7F050DE1806E5F800264321 /* SPOResumableDownloadsViewController.m in Sources */,
 				C7754A3818008D990079ACBD /* main.m in Sources */,
 				C76B93821801B19100E043E7 /* SPONotesStore.m in Sources */,
 				C7CD7F0418014EAF005D3A96 /* SPOActiveUser.m in Sources */,
@@ -472,6 +491,7 @@
 				C7754A6E180091E80079ACBD /* SPOUserStore.m in Sources */,
 				C76B937418019F5000E043E7 /* SPORegistrationViewController.m in Sources */,
 				C7CD7F0C180159FC005D3A96 /* SPOLoginViewController.m in Sources */,
+				C7F050DB1806C00500264321 /* SPOBGDownloadsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

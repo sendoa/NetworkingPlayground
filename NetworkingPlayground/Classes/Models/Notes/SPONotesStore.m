@@ -11,7 +11,7 @@
 #import "SPONote.h"
 
 #pragma mark - Internal use constants
-static NSString * const SPONotesStoreBaseURL = @"http://simplenotes.sportuondo.dev/api/v1";
+static NSString * const SPONotesStoreBaseURL = @"http://simplenotes.qbikode.com/api/v1";
 static NSString * const SPONotesStoreAPIKey = @"55e76dc4bbae25b066cb";
 
 @interface SPONotesStore ()

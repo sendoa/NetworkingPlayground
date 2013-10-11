@@ -16,17 +16,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="YKA-KW-0nC" kind="relationship" relationship="viewControllers" id="dV0-lm-RKh"/>
-                        <segue destination="QhO-DP-Fl9" kind="relationship" relationship="viewControllers" id="gRH-Ek-pp3"/>
+                        <segue destination="PJj-w0-fU1" kind="relationship" relationship="viewControllers" id="gRH-Ek-pp3"/>
+                        <segue destination="jdS-d3-C7N" kind="relationship" relationship="viewControllers" id="Wv9-98-U4x"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5Q-Et-DbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-305" y="492"/>
         </scene>
-        <!--View Controller - Descargas-->
+        <!--Downloads View Controller - Descargas pausables y BG-->
         <scene sceneID="tkQ-6d-H87">
             <objects>
-                <viewController id="QhO-DP-Fl9" sceneMemberID="viewController">
+                <viewController id="QhO-DP-Fl9" customClass="SPOBGDownloadsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fZs-7I-rxy"/>
                         <viewControllerLayoutGuide type="bottom" id="IkO-fh-0tG"/>
@@ -34,13 +35,41 @@
                     <view key="view" contentMode="scaleToFill" id="1y8-ee-v31">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deS-mk-lwn">
+                                <rect key="frame" x="106" y="104" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Iniciar descarga">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonTapped:" destination="QhO-DP-Fl9" eventType="touchUpInside" id="Av4-bp-b1E"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wTL-Bi-9be">
+                                <rect key="frame" x="20" y="389" width="280" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="deS-mk-lwn" secondAttribute="centerX" constant="-0.5" id="3u5-dz-W7a"/>
+                            <constraint firstItem="deS-mk-lwn" firstAttribute="top" secondItem="fZs-7I-rxy" secondAttribute="bottom" constant="40" id="ToW-nK-oGu"/>
+                            <constraint firstItem="IkO-fh-0tG" firstAttribute="top" secondItem="wTL-Bi-9be" secondAttribute="bottom" constant="40" id="aCr-HW-Am4"/>
+                            <constraint firstItem="wTL-Bi-9be" firstAttribute="leading" secondItem="1y8-ee-v31" secondAttribute="leading" constant="20" id="b1a-Pw-3Oo"/>
+                            <constraint firstAttribute="trailing" secondItem="wTL-Bi-9be" secondAttribute="trailing" constant="20" id="xBM-r8-EfX"/>
+                            <constraint firstAttribute="centerX" secondItem="wTL-Bi-9be" secondAttribute="centerX" id="zdz-gM-8Dr"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Descargas" image="download-icon" id="APt-Bf-EjC"/>
+                    <navigationItem key="navigationItem" title="Descargas pausables y BG" id="Egk-8X-wZe"/>
+                    <connections>
+                        <outlet property="btnDownloadButton" destination="deS-mk-lwn" id="wCU-5Y-45d"/>
+                        <outlet property="downloadProgressView" destination="wTL-Bi-9be" id="iTL-Pu-ncJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXt-LQ-HTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387" y="830"/>
+            <point key="canvasLocation" x="913" y="830"/>
         </scene>
         <!--Navigation Controller - Notas-->
         <scene sceneID="h1S-rW-3qV">
@@ -157,7 +186,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZM-iD-pc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="500"/>
+            <point key="canvasLocation" x="2460" y="500"/>
         </scene>
         <!--Login View Controller - Login-->
         <scene sceneID="hAL-Gx-Mvh">
@@ -442,7 +471,93 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4I-Bn-deu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408" y="500"/>
+            <point key="canvasLocation" x="1934" y="500"/>
+        </scene>
+        <!--Resumable Downloads View Controller - Descargas recuperables-->
+        <scene sceneID="SbW-UM-qFb">
+            <objects>
+                <viewController id="rvO-TS-NiT" customClass="SPOResumableDownloadsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qap-q0-XRh"/>
+                        <viewControllerLayoutGuide type="bottom" id="5vg-uE-ZSb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WVa-kn-kH1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHJ-gv-k9S">
+                                <rect key="frame" x="106" y="104" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Iniciar descarga">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonTapped:" destination="rvO-TS-NiT" eventType="touchUpInside" id="8cj-Id-gtK"/>
+                                    <action selector="downloadButtonTapped:" destination="QhO-DP-Fl9" eventType="touchUpInside" id="ReU-gY-riE"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-gR-UD0">
+                                <rect key="frame" x="20" y="389" width="280" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xHJ-gv-k9S" firstAttribute="top" secondItem="qap-q0-XRh" secondAttribute="bottom" constant="40" id="Cmg-L3-LqH"/>
+                            <constraint firstItem="5vg-uE-ZSb" firstAttribute="top" secondItem="gVx-gR-UD0" secondAttribute="bottom" constant="40" id="Cvm-Ru-Yem"/>
+                            <constraint firstAttribute="centerX" secondItem="xHJ-gv-k9S" secondAttribute="centerX" constant="-0.5" id="UFu-aA-6yb"/>
+                            <constraint firstAttribute="trailing" secondItem="gVx-gR-UD0" secondAttribute="trailing" constant="20" id="WSc-zB-je8"/>
+                            <constraint firstAttribute="centerX" secondItem="gVx-gR-UD0" secondAttribute="centerX" id="d83-ti-BOK"/>
+                            <constraint firstItem="gVx-gR-UD0" firstAttribute="leading" secondItem="WVa-kn-kH1" secondAttribute="leading" constant="20" id="jTK-5E-gtU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Descargas recuperables" id="oEA-xa-cAm"/>
+                    <connections>
+                        <outlet property="btnDownloadButton" destination="xHJ-gv-k9S" id="lC2-uC-4Ux"/>
+                        <outlet property="downloadProgressView" destination="gVx-gR-UD0" id="9yw-ZV-6gM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mf0-I6-xcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="1463"/>
+        </scene>
+        <!--Navigation Controller - Pausable DLs-->
+        <scene sceneID="Snv-Da-nwK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PJj-w0-fU1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pausable DLs" image="download-icon" id="APt-Bf-EjC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C8W-7Y-a0j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QhO-DP-Fl9" kind="relationship" relationship="rootViewController" id="3h8-aQ-CzC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYO-LR-DAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="830"/>
+        </scene>
+        <!--Navigation Controller - Resumable DLs-->
+        <scene sceneID="KgX-VA-IrO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jdS-d3-C7N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Resumable DLs" image="download-icon" id="cRR-B8-y3y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ez-09-YFR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rvO-TS-NiT" kind="relationship" relationship="rootViewController" id="9Om-J5-4dv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FzI-oV-9P2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="1463"/>
         </scene>
     </scenes>
     <resources>

@@ -33,9 +33,25 @@
     if ([selectedVC isMemberOfClass:UINavigationController.class]) {
         id topVC = [(UINavigationController *)selectedVC topViewController];
         if ([topVC isMemberOfClass:[SPONotesViewController class]]) {
+            // 1
             [(SPONotesViewController *)topVC performBackgroundNotesFetchingWithCompletionHandler:completionHandler];
         }
+    } else {
+        completionHandler(UIBackgroundFetchResultNoData);
     }
+}
+
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler
+{
+    // Throw notification with information about ended background transfer
+    NSDictionary* userInfo = @{
+                               @"completionHandler" : completionHandler,
+                               @"sessionIdentifier" : identifier
+                               };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BackgroundTransferDidEndNotification"
+                                                        object:nil
+                                                      userInfo:userInfo];
 }
 
 #pragma mark - Helpers

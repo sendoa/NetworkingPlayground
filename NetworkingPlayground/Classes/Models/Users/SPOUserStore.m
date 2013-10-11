@@ -13,7 +13,7 @@
 NSString * const SPOUserStoreLoginSucceedNotiticationKey = @"SPOUserStoreLoginSucceedNotitication";
 
 #pragma mark - Internal use constants
-static NSString * const SPOUserStoreBaseURL = @"http://simplenotes.sportuondo.dev/api/v1";
+static NSString * const SPOUserStoreBaseURL = @"http://simplenotes.qbikode.com/api/v1";
 static NSString * const SPOUserStoreAPIKey = @"55e76dc4bbae25b066cb";
 
 @interface SPOUserStore ()

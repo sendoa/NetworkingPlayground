@@ -1,0 +1,1 @@
+Proyecto de ejemplo para el artículo de "Actualizaciones de datos en segundo plano con iOS 7" para www.migueldiazrubio.com

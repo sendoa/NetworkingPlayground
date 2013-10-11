@@ -1,0 +1,729 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36D0BABEEAB1401BB24A6517 /* libPods-NetworkingPlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC6453858AC4847894EFBE7 /* libPods-NetworkingPlayground.a */; };
+		C73FF7E61801C3FF0081804D /* SPONewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73FF7E51801C3FF0081804D /* SPONewNoteViewController.m */; };
+		C76B937418019F5000E043E7 /* SPORegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937318019F5000E043E7 /* SPORegistrationViewController.m */; };
+		C76B937B1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937A1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m */; };
+		C76B937F1801AE3600E043E7 /* SPONote.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B937E1801AE3600E043E7 /* SPONote.m */; };
+		C76B93821801B19100E043E7 /* SPONotesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B93811801B19100E043E7 /* SPONotesStore.m */; };
+		C76B93851801BD3400E043E7 /* SPONoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76B93841801BD3400E043E7 /* SPONoteCell.m */; };
+		C7754A2C18008D990079ACBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2B18008D990079ACBD /* Foundation.framework */; };
+		C7754A2E18008D990079ACBD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2D18008D990079ACBD /* CoreGraphics.framework */; };
+		C7754A3018008D990079ACBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2F18008D990079ACBD /* UIKit.framework */; };
+		C7754A3618008D990079ACBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7754A3418008D990079ACBD /* InfoPlist.strings */; };
+		C7754A3818008D990079ACBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7754A3718008D990079ACBD /* main.m */; };
+		C7754A3E18008D990079ACBD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7754A3D18008D990079ACBD /* Images.xcassets */; };
+		C7754A4518008D990079ACBD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A4418008D990079ACBD /* XCTest.framework */; };
+		C7754A4618008D990079ACBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2B18008D990079ACBD /* Foundation.framework */; };
+		C7754A4718008D990079ACBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7754A2F18008D990079ACBD /* UIKit.framework */; };
+		C7754A4F18008D990079ACBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7754A4D18008D990079ACBD /* InfoPlist.strings */; };
+		C7754A5118008D990079ACBD /* NetworkingPlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7754A5018008D990079ACBD /* NetworkingPlaygroundTests.m */; };
+		C7754A6518008F8F0079ACBD /* SPOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7754A6418008F8F0079ACBD /* SPOAppDelegate.m */; };
+		C7754A6718008FC30079ACBD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7754A6618008FC30079ACBD /* MainStoryboard.storyboard */; };
+		C7754A6B180091DB0079ACBD /* SPOUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7754A6A180091DB0079ACBD /* SPOUser.m */; };
+		C7754A6E180091E80079ACBD /* SPOUserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C7754A6D180091E80079ACBD /* SPOUserStore.m */; };
+		C7CD7F0418014EAF005D3A96 /* SPOActiveUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0318014EAF005D3A96 /* SPOActiveUser.m */; };
+		C7CD7F0718015441005D3A96 /* SPONotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0618015441005D3A96 /* SPONotesViewController.m */; };
+		C7CD7F0C180159FC005D3A96 /* SPOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */; };
+		C7F050DB1806C00500264321 /* SPOBGDownloadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F050DA1806C00500264321 /* SPOBGDownloadsViewController.m */; };
+		C7F050DE1806E5F800264321 /* SPOResumableDownloadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F050DD1806E5F800264321 /* SPOResumableDownloadsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7754A4818008D990079ACBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7754A2018008D980079ACBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7754A2718008D980079ACBD;
+			remoteInfo = NetworkingPlayground;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1292EEED33264B59A6922DD4 /* Pods-NetworkingPlayground.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingPlayground.xcconfig"; path = "Pods/Pods-NetworkingPlayground.xcconfig"; sourceTree = "<group>"; };
+		C73FF7E41801C3FF0081804D /* SPONewNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPONewNoteViewController.h; path = Notes/SPONewNoteViewController.h; sourceTree = "<group>"; };
+		C73FF7E51801C3FF0081804D /* SPONewNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPONewNoteViewController.m; path = Notes/SPONewNoteViewController.m; sourceTree = "<group>"; };
+		C76B937218019F5000E043E7 /* SPORegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPORegistrationViewController.h; sourceTree = "<group>"; };
+		C76B937318019F5000E043E7 /* SPORegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPORegistrationViewController.m; sourceTree = "<group>"; };
+		C76B93791801A13100E043E7 /* SPONetworkingPlaygroundConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPONetworkingPlaygroundConstants.h; sourceTree = "<group>"; };
+		C76B937A1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPONetworkingPlaygroundConstants.m; sourceTree = "<group>"; };
+		C76B937D1801AE3600E043E7 /* SPONote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPONote.h; sourceTree = "<group>"; };
+		C76B937E1801AE3600E043E7 /* SPONote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPONote.m; sourceTree = "<group>"; };
+		C76B93801801B19100E043E7 /* SPONotesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPONotesStore.h; sourceTree = "<group>"; };
+		C76B93811801B19100E043E7 /* SPONotesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPONotesStore.m; sourceTree = "<group>"; };
+		C76B93831801BD3400E043E7 /* SPONoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPONoteCell.h; sourceTree = "<group>"; };
+		C76B93841801BD3400E043E7 /* SPONoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPONoteCell.m; sourceTree = "<group>"; };
+		C7754A2818008D990079ACBD /* NetworkingPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7754A2B18008D990079ACBD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C7754A2D18008D990079ACBD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C7754A2F18008D990079ACBD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C7754A3318008D990079ACBD /* NetworkingPlayground-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetworkingPlayground-Info.plist"; sourceTree = "<group>"; };
+		C7754A3518008D990079ACBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7754A3718008D990079ACBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7754A3918008D990079ACBD /* NetworkingPlayground-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkingPlayground-Prefix.pch"; sourceTree = "<group>"; };
+		C7754A3D18008D990079ACBD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C7754A4318008D990079ACBD /* NetworkingPlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingPlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7754A4418008D990079ACBD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C7754A4C18008D990079ACBD /* NetworkingPlaygroundTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetworkingPlaygroundTests-Info.plist"; sourceTree = "<group>"; };
+		C7754A4E18008D990079ACBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7754A5018008D990079ACBD /* NetworkingPlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingPlaygroundTests.m; sourceTree = "<group>"; };
+		C7754A6318008F8F0079ACBD /* SPOAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOAppDelegate.h; sourceTree = "<group>"; };
+		C7754A6418008F8F0079ACBD /* SPOAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOAppDelegate.m; sourceTree = "<group>"; };
+		C7754A6618008FC30079ACBD /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		C7754A69180091DB0079ACBD /* SPOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOUser.h; sourceTree = "<group>"; };
+		C7754A6A180091DB0079ACBD /* SPOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOUser.m; sourceTree = "<group>"; };
+		C7754A6C180091E80079ACBD /* SPOUserStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOUserStore.h; sourceTree = "<group>"; };
+		C7754A6D180091E80079ACBD /* SPOUserStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOUserStore.m; sourceTree = "<group>"; };
+		C7CD7F0218014EAF005D3A96 /* SPOActiveUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOActiveUser.h; sourceTree = "<group>"; };
+		C7CD7F0318014EAF005D3A96 /* SPOActiveUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOActiveUser.m; sourceTree = "<group>"; };
+		C7CD7F0518015441005D3A96 /* SPONotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPONotesViewController.h; path = Notes/SPONotesViewController.h; sourceTree = "<group>"; };
+		C7CD7F0618015441005D3A96 /* SPONotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPONotesViewController.m; path = Notes/SPONotesViewController.m; sourceTree = "<group>"; };
+		C7CD7F0A180159FC005D3A96 /* SPOLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOLoginViewController.h; sourceTree = "<group>"; };
+		C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOLoginViewController.m; sourceTree = "<group>"; };
+		C7F050D91806C00500264321 /* SPOBGDownloadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOBGDownloadsViewController.h; sourceTree = "<group>"; };
+		C7F050DA1806C00500264321 /* SPOBGDownloadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOBGDownloadsViewController.m; sourceTree = "<group>"; };
+		C7F050DC1806E5F800264321 /* SPOResumableDownloadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOResumableDownloadsViewController.h; sourceTree = "<group>"; };
+		C7F050DD1806E5F800264321 /* SPOResumableDownloadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOResumableDownloadsViewController.m; sourceTree = "<group>"; };
+		CAC6453858AC4847894EFBE7 /* libPods-NetworkingPlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkingPlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7754A2518008D980079ACBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7754A2E18008D990079ACBD /* CoreGraphics.framework in Frameworks */,
+				C7754A3018008D990079ACBD /* UIKit.framework in Frameworks */,
+				C7754A2C18008D990079ACBD /* Foundation.framework in Frameworks */,
+				36D0BABEEAB1401BB24A6517 /* libPods-NetworkingPlayground.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7754A4018008D990079ACBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7754A4518008D990079ACBD /* XCTest.framework in Frameworks */,
+				C7754A4718008D990079ACBD /* UIKit.framework in Frameworks */,
+				C7754A4618008D990079ACBD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C76B93751801A0B900E043E7 /* Other classes */ = {
+			isa = PBXGroup;
+			children = (
+				C76B93791801A13100E043E7 /* SPONetworkingPlaygroundConstants.h */,
+				C76B937A1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m */,
+			);
+			path = "Other classes";
+			sourceTree = "<group>";
+		};
+		C76B937C1801AE2A00E043E7 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				C76B937D1801AE3600E043E7 /* SPONote.h */,
+				C76B937E1801AE3600E043E7 /* SPONote.m */,
+				C76B93801801B19100E043E7 /* SPONotesStore.h */,
+				C76B93811801B19100E043E7 /* SPONotesStore.m */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		C7754A1F18008D980079ACBD = {
+			isa = PBXGroup;
+			children = (
+				C7754A3118008D990079ACBD /* NetworkingPlayground */,
+				C7754A4A18008D990079ACBD /* NetworkingPlaygroundTests */,
+				C7754A2A18008D990079ACBD /* Frameworks */,
+				C7754A2918008D990079ACBD /* Products */,
+				1292EEED33264B59A6922DD4 /* Pods-NetworkingPlayground.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		C7754A2918008D990079ACBD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A2818008D990079ACBD /* NetworkingPlayground.app */,
+				C7754A4318008D990079ACBD /* NetworkingPlaygroundTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7754A2A18008D990079ACBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A2B18008D990079ACBD /* Foundation.framework */,
+				C7754A2D18008D990079ACBD /* CoreGraphics.framework */,
+				C7754A2F18008D990079ACBD /* UIKit.framework */,
+				C7754A4418008D990079ACBD /* XCTest.framework */,
+				CAC6453858AC4847894EFBE7 /* libPods-NetworkingPlayground.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7754A3118008D990079ACBD /* NetworkingPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A5A18008F450079ACBD /* Classes */,
+				C7754A5F18008F450079ACBD /* Resources */,
+				C7754A3218008D990079ACBD /* Supporting Files */,
+			);
+			path = NetworkingPlayground;
+			sourceTree = "<group>";
+		};
+		C7754A3218008D990079ACBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A3318008D990079ACBD /* NetworkingPlayground-Info.plist */,
+				C7754A3418008D990079ACBD /* InfoPlist.strings */,
+				C7754A3718008D990079ACBD /* main.m */,
+				C7754A3918008D990079ACBD /* NetworkingPlayground-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7754A4A18008D990079ACBD /* NetworkingPlaygroundTests */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A5018008D990079ACBD /* NetworkingPlaygroundTests.m */,
+				C7754A4B18008D990079ACBD /* Supporting Files */,
+			);
+			path = NetworkingPlaygroundTests;
+			sourceTree = "<group>";
+		};
+		C7754A4B18008D990079ACBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A4C18008D990079ACBD /* NetworkingPlaygroundTests-Info.plist */,
+				C7754A4D18008D990079ACBD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7754A5A18008F450079ACBD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A5B18008F450079ACBD /* App Delegate */,
+				C7754A5C18008F450079ACBD /* Controllers */,
+				C7754A5D18008F450079ACBD /* Models */,
+				C7754A5E18008F450079ACBD /* Views */,
+				C76B93751801A0B900E043E7 /* Other classes */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C7754A5B18008F450079ACBD /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A6318008F8F0079ACBD /* SPOAppDelegate.h */,
+				C7754A6418008F8F0079ACBD /* SPOAppDelegate.m */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		C7754A5C18008F450079ACBD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7CD7F09180159EC005D3A96 /* Login */,
+				C7CD7F0818015446005D3A96 /* Notes */,
+				C7F050D81806BFEF00264321 /* Downloads */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C7754A5D18008F450079ACBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C76B937C1801AE2A00E043E7 /* Notes */,
+				C7754A68180091C80079ACBD /* Users */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C7754A5E18008F450079ACBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C76B93831801BD3400E043E7 /* SPONoteCell.h */,
+				C76B93841801BD3400E043E7 /* SPONoteCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7754A5F18008F450079ACBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A6018008F450079ACBD /* Images */,
+				C7754A6118008F450079ACBD /* Storyboards */,
+				C7754A6218008F450079ACBD /* XIBs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C7754A6018008F450079ACBD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A3D18008D990079ACBD /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C7754A6118008F450079ACBD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A6618008FC30079ACBD /* MainStoryboard.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C7754A6218008F450079ACBD /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
+		C7754A68180091C80079ACBD /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				C7754A69180091DB0079ACBD /* SPOUser.h */,
+				C7754A6A180091DB0079ACBD /* SPOUser.m */,
+				C7754A6C180091E80079ACBD /* SPOUserStore.h */,
+				C7754A6D180091E80079ACBD /* SPOUserStore.m */,
+				C7CD7F0218014EAF005D3A96 /* SPOActiveUser.h */,
+				C7CD7F0318014EAF005D3A96 /* SPOActiveUser.m */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		C7CD7F0818015446005D3A96 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				C7CD7F0518015441005D3A96 /* SPONotesViewController.h */,
+				C7CD7F0618015441005D3A96 /* SPONotesViewController.m */,
+				C73FF7E41801C3FF0081804D /* SPONewNoteViewController.h */,
+				C73FF7E51801C3FF0081804D /* SPONewNoteViewController.m */,
+			);
+			name = Notes;
+			sourceTree = "<group>";
+		};
+		C7CD7F09180159EC005D3A96 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C7CD7F0A180159FC005D3A96 /* SPOLoginViewController.h */,
+				C7CD7F0B180159FC005D3A96 /* SPOLoginViewController.m */,
+				C76B937218019F5000E043E7 /* SPORegistrationViewController.h */,
+				C76B937318019F5000E043E7 /* SPORegistrationViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C7F050D81806BFEF00264321 /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				C7F050D91806C00500264321 /* SPOBGDownloadsViewController.h */,
+				C7F050DA1806C00500264321 /* SPOBGDownloadsViewController.m */,
+				C7F050DC1806E5F800264321 /* SPOResumableDownloadsViewController.h */,
+				C7F050DD1806E5F800264321 /* SPOResumableDownloadsViewController.m */,
+			);
+			path = Downloads;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7754A2718008D980079ACBD /* NetworkingPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7754A5418008D990079ACBD /* Build configuration list for PBXNativeTarget "NetworkingPlayground" */;
+			buildPhases = (
+				A0ACFEC4006F4DAA9258D4EA /* Check Pods Manifest.lock */,
+				C7754A2418008D980079ACBD /* Sources */,
+				C7754A2518008D980079ACBD /* Frameworks */,
+				C7754A2618008D980079ACBD /* Resources */,
+				B08F835A65D94F4290FC2A8D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkingPlayground;
+			productName = NetworkingPlayground;
+			productReference = C7754A2818008D990079ACBD /* NetworkingPlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7754A4218008D990079ACBD /* NetworkingPlaygroundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7754A5718008D990079ACBD /* Build configuration list for PBXNativeTarget "NetworkingPlaygroundTests" */;
+			buildPhases = (
+				C7754A3F18008D990079ACBD /* Sources */,
+				C7754A4018008D990079ACBD /* Frameworks */,
+				C7754A4118008D990079ACBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7754A4918008D990079ACBD /* PBXTargetDependency */,
+			);
+			name = NetworkingPlaygroundTests;
+			productName = NetworkingPlaygroundTests;
+			productReference = C7754A4318008D990079ACBD /* NetworkingPlaygroundTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7754A2018008D980079ACBD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SPO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Sendoa Portuondo";
+				TargetAttributes = {
+					C7754A2718008D980079ACBD = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					C7754A4218008D990079ACBD = {
+						TestTargetID = C7754A2718008D980079ACBD;
+					};
+				};
+			};
+			buildConfigurationList = C7754A2318008D980079ACBD /* Build configuration list for PBXProject "NetworkingPlayground" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C7754A1F18008D980079ACBD;
+			productRefGroup = C7754A2918008D990079ACBD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7754A2718008D980079ACBD /* NetworkingPlayground */,
+				C7754A4218008D990079ACBD /* NetworkingPlaygroundTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7754A2618008D980079ACBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7754A6718008FC30079ACBD /* MainStoryboard.storyboard in Resources */,
+				C7754A3618008D990079ACBD /* InfoPlist.strings in Resources */,
+				C7754A3E18008D990079ACBD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7754A4118008D990079ACBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7754A4F18008D990079ACBD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0ACFEC4006F4DAA9258D4EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B08F835A65D94F4290FC2A8D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NetworkingPlayground-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7754A2418008D980079ACBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7754A6B180091DB0079ACBD /* SPOUser.m in Sources */,
+				C76B937B1801A13100E043E7 /* SPONetworkingPlaygroundConstants.m in Sources */,
+				C73FF7E61801C3FF0081804D /* SPONewNoteViewController.m in Sources */,
+				C76B937F1801AE3600E043E7 /* SPONote.m in Sources */,
+				C7F050DE1806E5F800264321 /* SPOResumableDownloadsViewController.m in Sources */,
+				C7754A3818008D990079ACBD /* main.m in Sources */,
+				C76B93821801B19100E043E7 /* SPONotesStore.m in Sources */,
+				C7CD7F0418014EAF005D3A96 /* SPOActiveUser.m in Sources */,
+				C7CD7F0718015441005D3A96 /* SPONotesViewController.m in Sources */,
+				C7754A6518008F8F0079ACBD /* SPOAppDelegate.m in Sources */,
+				C76B93851801BD3400E043E7 /* SPONoteCell.m in Sources */,
+				C7754A6E180091E80079ACBD /* SPOUserStore.m in Sources */,
+				C76B937418019F5000E043E7 /* SPORegistrationViewController.m in Sources */,
+				C7CD7F0C180159FC005D3A96 /* SPOLoginViewController.m in Sources */,
+				C7F050DB1806C00500264321 /* SPOBGDownloadsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7754A3F18008D990079ACBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7754A5118008D990079ACBD /* NetworkingPlaygroundTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C7754A4918008D990079ACBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7754A2718008D980079ACBD /* NetworkingPlayground */;
+			targetProxy = C7754A4818008D990079ACBD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C7754A3418008D990079ACBD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7754A3518008D990079ACBD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C7754A4D18008D990079ACBD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7754A4E18008D990079ACBD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7754A5218008D990079ACBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C7754A5318008D990079ACBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7754A5518008D990079ACBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1292EEED33264B59A6922DD4 /* Pods-NetworkingPlayground.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkingPlayground/NetworkingPlayground-Prefix.pch";
+				INFOPLIST_FILE = "NetworkingPlayground/NetworkingPlayground-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4D9DE5E0-C7B8-4DCD-8E88-494C30EC0619";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C7754A5618008D990079ACBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1292EEED33264B59A6922DD4 /* Pods-NetworkingPlayground.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkingPlayground/NetworkingPlayground-Prefix.pch";
+				INFOPLIST_FILE = "NetworkingPlayground/NetworkingPlayground-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4D9DE5E0-C7B8-4DCD-8E88-494C30EC0619";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C7754A5818008D990079ACBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetworkingPlayground.app/NetworkingPlayground";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkingPlayground/NetworkingPlayground-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NetworkingPlaygroundTests/NetworkingPlaygroundTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C7754A5918008D990079ACBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetworkingPlayground.app/NetworkingPlayground";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkingPlayground/NetworkingPlayground-Prefix.pch";
+				INFOPLIST_FILE = "NetworkingPlaygroundTests/NetworkingPlaygroundTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7754A2318008D980079ACBD /* Build configuration list for PBXProject "NetworkingPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7754A5218008D990079ACBD /* Debug */,
+				C7754A5318008D990079ACBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7754A5418008D990079ACBD /* Build configuration list for PBXNativeTarget "NetworkingPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7754A5518008D990079ACBD /* Debug */,
+				C7754A5618008D990079ACBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7754A5718008D990079ACBD /* Build configuration list for PBXNativeTarget "NetworkingPlaygroundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7754A5818008D990079ACBD /* Debug */,
+				C7754A5918008D990079ACBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7754A2018008D980079ACBD /* Project object */;
+}

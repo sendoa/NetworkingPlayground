@@ -170,7 +170,7 @@
                 NSLog(@"Se han recibido nuevas notas");
                 self.notes = notes;
                 [self.tableView reloadData];
-                 if (completionHandler) completionHandler(UIBackgroundFetchResultNoData);
+                 if (completionHandler) completionHandler(UIBackgroundFetchResultNewData);
             }
         } else {
             NSLog(@"Error while fetching notes %@", error);
